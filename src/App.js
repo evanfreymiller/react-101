@@ -4,29 +4,26 @@ import "./App.css";
 
 function App() {
   const happyHour = false;
-  const title = "React 101";
+  const title = "Happy Hour Indicator";
+
+  const currentHour = new Date().getHours();
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>{title}</h1>
-        {happyHour ? <HappyHour /> : <NotHappyHour />}
+        <DetermineHappyHour currentHour={currentHour} name="Evan" />
       </header>
     </div>
   );
 }
 
-const HappyHour = () => {
-  return (
-    <div>It's time for Happy Hour!</div>
-  )
-}
-
-const NotHappyHour = () => {
-  return (
-    <div>It's not time for Happy Hour</div>
-  )
-}
+const DetermineHappyHour = (props) => {
+  if (props.currentHour >= 17) {
+    return <div>It's time for Happy Hour {props.name}!</div>;
+  }
+  return <div>It's not time for Happy Hour {props.name}</div>;
+};
 
 export default App;
