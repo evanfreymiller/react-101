@@ -3,7 +3,6 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  const happyHour = false;
   const title = "Happy Hour Indicator";
 
   const currentHour = new Date().getHours();
