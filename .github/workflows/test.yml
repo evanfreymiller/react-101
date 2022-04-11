@@ -1,0 +1,15 @@
+name: Translations Pull Request Action
+on:
+  create:
+    branches:
+      - 'PREC**'
+      
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Pull Request
+        uses: actions/github-script@v6
+        with:
+          script: |
+            console.log(context)
